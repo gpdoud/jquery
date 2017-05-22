@@ -7,40 +7,21 @@
 	<script type="text/javascript">
 		$().ready(function() {
 			// init statements go here	
-			var isRed = false;
-			if(isRed == true) {
-				$("#aLabel")
-					.css("font-family", "Tahoma")
-					.css("color", "red")
-					.css("font-weight", "bold");
-			} else {
-				$("#aLabel").hide();
-			}
-			// link up button click
-			$("button").click(function() {
-				var btnName = $(this).text();
-				console.log("The GO button was clicked on", btnName);
-			});
-			$("button").attr("class", "makeGreen");
-			var inputValue = $("input").val();
-			console.log("The value in the input box is", inputValue);
-			$("div").html(
-				"<label>Click me!</label><button>Click me too!</button"
-				);
+			var tableRow1 = "<tr><td>8</td><td>1</td><td>6</td></tr>";
+			var tableRow2 = "<tr><td>3</td><td>5</td><td>7</td></tr>";
+			var tableRow3 = "<tr><td>4</td><td>9</td><td>2</td></tr>";
+			$("tbody").append(tableRow1)
+						.append(tableRow2)
+						.append(tableRow3);
 		});
-		function button_click() {
-
-		}
 	</script>
 	<style></style>
 </head>
 <body>
-	<label id="aLabel">This is a label.</label>
-	<button>The Go1 Button</button>
-	<button>The Go2 Button</button>
-	<button>The Go3 Button</button>
-	<button>The Go4 Button</button>
-	<input value="default value" />
-	<div></div>
+	<table>
+		<tbody>
+			<!-- <tr><td>8</td><td>1</td><td>6</td></tr> -->
+		</tbody>
+	</table>
 </body>
 </html>
