@@ -18,8 +18,15 @@
 			}
 			// link up button click
 			$("button").click(function() {
-				console.log("The GO button was clicked()")
+				var btnName = $(this).text();
+				console.log("The GO button was clicked on", btnName);
 			});
+			$("button").attr("class", "makeGreen");
+			var inputValue = $("input").val();
+			console.log("The value in the input box is", inputValue);
+			$("div").html(
+				"<label>Click me!</label><button>Click me too!</button"
+				);
 		});
 		function button_click() {
 
@@ -33,5 +40,7 @@
 	<button>The Go2 Button</button>
 	<button>The Go3 Button</button>
 	<button>The Go4 Button</button>
+	<input value="default value" />
+	<div></div>
 </body>
 </html>
