@@ -2,16 +2,36 @@
 <html>
 <head>
 	<title></title>
-	<script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript" />
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript" ></script>
 	<link href="" type="text/css" rel="stylesheet"></link>
-	<script lang="javascript">
+	<script type="text/javascript">
 		$().ready(function() {
 			// init statements go here	
+			var isRed = false;
+			if(isRed == true) {
+				$("#aLabel")
+					.css("font-family", "Tahoma")
+					.css("color", "red")
+					.css("font-weight", "bold");
+			} else {
+				$("#aLabel").hide();
+			}
+			// link up button click
+			$("button").click(function() {
+				console.log("The GO button was clicked()")
+			});
 		});
+		function button_click() {
+
+		}
 	</script>
 	<style></style>
 </head>
 <body>
-	<label id="aLabel"></label>
+	<label id="aLabel">This is a label.</label>
+	<button>The Go1 Button</button>
+	<button>The Go2 Button</button>
+	<button>The Go3 Button</button>
+	<button>The Go4 Button</button>
 </body>
 </html>
