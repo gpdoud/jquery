@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript" ></script>
+	<link href="" type="text/css" rel="stylesheet"></link>
+	<script lang="javascript">
+		var nbr = 0;
+		$().ready(function() {
+			init();
+			// button actions
+			$("button").click(function() {
+				var btnFace = $(this).text();
+				switch(btnFace) {
+					case "-":
+						nbr--;
+						break;
+					case "+":
+						nbr++;
+						break;
+					case "Reset":
+						nbr = 0;
+						break;
+				}
+				display(nbr);
+			});
+		}); // ready
+		function init() {
+			var body = $("body");
+			body.append("<button>-</button>");
+			body.append("<label></label");
+			$("label").text(nbr).css("margin", "0 10px");
+			body.append("<button>+</button>");
+			body.append("<button>Reset</button>");
+		}
+		function display(nbr) {
+			var redOrBlack = (nbr != 0 && nbr % 2 == 0) ? "red" : "black";
+			var normalOrItalic = (nbr != 0 && nbr % 3 == 0) ? "italic" : "normal";
+			var digits = String(nbr).split('');
+			var total = 0;
+			digits.forEach(function(digit) {
+				var nbr = Number(digit);
+				total += nbr;
+			}); 
+			
+			var bold = (total == 7) ? "bold" : "normal";
+			$("label").text(nbr)
+				.css("color", redOrBlack)
+				.css("font-style", normalOrItalic)
+				.css("font-weight", bold);
+		};
+	</script>
+	<style></style>
+</head>
+<body>
+</body>
+</html>
