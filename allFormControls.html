@@ -2,10 +2,63 @@
 <html>
 <head>
 	<title></title>
-	<script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript" ></script>	<link href="" type="text/css" rel="stylesheet"></link>
-	<script lang="javascript"></script>
+	<script src="http://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript" ></script>	
+	<link href="" type="text/css" rel="stylesheet"></link>
+	<script lang="javascript">
+		$().ready(function() {
+			$("#go").click(function() {
+				// SELECT list
+				var selectedGrade = $("#grade").val();
+				$("#selected").text(selectedGrade);
+				// password display
+				var thePassword = $("#pwd").val();
+				$("#pwdDisplay").text(thePassword);
+				// radio buttons
+				var selectedRadioButtonValue = $("input[name='grades']:checked").val();
+				$("#radio").text(selectedRadioButtonValue);
+				// checkboxes
+				var knowCs = $("#cs").is(":checked");
+				var knowJava = $("#java").is(":checked");
+				$("#lblcs").text(knowCs ? "Yes" : "No");
+				$("#lbljava").text(knowJava ? "Yes" : "No");
+			});
+		});
+	</script>
 	<style></style>
 </head>
 <body>
+	<button id="go">Display Value</button>
+	<div>
+	<!-- SELECT/OPTION -->
+	<select id="grade" name="grade">
+		<option value="A">100 - 92</option>
+		<option value="B">91 - 83</option>
+		<option value="C" selected>82 - 70</option>
+		<option value="D">69 - 65</option>
+		<option value="F">64 - 0</option>
+		<option>-1</option>
+	</select>
+	<label id="selected"></label>
+	</div>
+	<div>
+	<!-- PASSWORD -->
+	<label>Password:</label>
+	<input id="pwd" type="password" />
+	<label id="pwdDisplay"></label>
+	</div>
+	<div>
+	<!-- RADIO BUTTONS -->
+	<input type="radio" value="1" name="grades">A</input><br />
+	<input type="radio" value="2" name="grades">B</input><br />
+	<input type="radio" value="3" name="grades">C</input>
+	<label id="radio"></label>
+	</div>
+	<div>
+	<!-- CHECK BOXES -->
+	<input type="checkbox" id="cs" value="1">I know C#.Net</input><br />
+	<input type="checkbox" id="java" value="1">I know Java</input>
+	<p>I know C#.Net: <label id="lblcs"></label></p>
+	<p>I know Java: <label id="lbljava"></label></p>
+	</div>
 </body>
 </html>
