@@ -21,6 +21,12 @@
 				var knowJava = $("#java").is(":checked");
 				$("#lblcs").text(knowCs ? "Yes" : "No");
 				$("#lbljava").text(knowJava ? "Yes" : "No");
+				// textarea
+				var ta = $("#ta").val();
+				$("#taDisplay").text(ta);
+				// datalist
+				var dl = $("#dl").val();
+				$("#dlDisplay").text(dl);
 			});
 		});
 	</script>
@@ -59,6 +65,30 @@
 	<input type="checkbox" id="java" value="1">I know Java</input>
 	<p>I know C#.Net: <label id="lblcs"></label></p>
 	<p>I know Java: <label id="lbljava"></label></p>
+	</div>
+	<div>
+	<!-- TEXT AREA -->
+	<textarea id="ta" rows="5" cols="72"></textarea>
+	<p><label id="taDisplay"></label>
+	</div>
+	<div>
+	<!-- DATALIST -->
+	<input id="dl" list="browsers">
+  	<datalist id="browsers">
+	    <option value="Internet Explorer">
+	    <option value="Firefox">
+	    <option value="Chrome">
+	    <option value="Opera">
+	    <option value="Safari">
+	</datalist> 
+	<p><label id="dlDisplay"></label>
+	</div>
+	<div>
+	<!-- INPUT attributes -->
+	<input type="text" readonly />
+	<input type="text" disabled />
+	<input type="text" size="50" /><!-- characters -->
+	<input type="text" maxlength="30" />
 	</div>
 </body>
 </html>
